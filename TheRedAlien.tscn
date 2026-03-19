@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/RedAlien.fbx" type="PackedScene" id=1]
+[ext_resource path="res://HealthBarEnemies.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/RedAlien.gd" type="Script" id=3]
+
+[sub_resource type="CapsuleShape" id=1]
+margin = 10.0
+
+[node name="RedBoi" type="KinematicBody" groups=[
+"RedAlien",
+]]
+transform = Transform( 5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0 )
+script = ExtResource( 3 )
+
+[node name="HealthBar" parent="." instance=ExtResource( 2 )]
+transform = Transform( 2.25, 0, 0, 0, 2.25, -9.59234e-14, 0, 9.59234e-14, 2.25, 0, 2.04521, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 0.423, 0, 0, 0, -2.84785e-07, -0.778, 0, 1.748, -1.26752e-07, 0.18, 0.072, 0 )
+shape = SubResource( 1 )
+
+[node name="RedAlien" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.86, 0 )
+
+[node name="Area" type="Area" parent="."]
+
+[node name="CollisionPolygon" type="CollisionPolygon" parent="Area"]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 1, 0, 0 )
+polygon = PoolVector2Array( 0, 0, 50, 6, 50, -6 )
+
+[node name="ProjectileSpawnPoint" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.99863, 0.052336, 0, -0.052336, 0.99863, 1, 0, -1 )
+
+[node name="ProjectileCooldown" type="Timer" parent="."]
+
+[node name="GroundCollider" type="RayCast" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0 )
+enabled = true
+
+[node name="JumpShit" type="Timer" parent="."]
+wait_time = 0.1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="WalkAgainBitch" type="Timer" parent="."]
+wait_time = 0.87
+[connection signal="timeout" from="ProjectileCooldown" to="." method="_on_ProjectileCooldown_timeout"]
+[connection signal="timeout" from="JumpShit" to="." method="_on_JumpShit_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="WalkAgainBitch" to="." method="_on_WalkAgainBitch_timeout"]

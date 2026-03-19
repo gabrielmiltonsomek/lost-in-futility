@@ -1,0 +1,125 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Scenes/TitleScreen.png" type="Texture" id=1]
+[ext_resource path="res://textures/TitleScreenFontNew.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Scenes/CreditsScene.gd" type="Script" id=3]
+[ext_resource path="res://Models/VersionFont.tres" type="DynamicFont" id=4]
+
+[sub_resource type="DynamicFontData" id=3]
+font_path = "res://Models/Montserrat-ExtraBold.ttf"
+
+[sub_resource type="DynamicFont" id=4]
+size = 18
+font_data = SubResource( 3 )
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://Models/Montserrat-ExtraBold.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 43
+font_data = SubResource( 1 )
+
+[node name="TheCredits" type="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control"]
+margin_left = 100.0
+margin_top = 453.0
+margin_right = 1168.0
+margin_bottom = 714.0
+custom_fonts/normal_font = SubResource( 4 )
+text = "In the year 2220 an extraterrestrial empire invaded the Earth. The powerful warships that the aliens possessed wasted little time wiping out every military organization on the planet. The command ship was rumored to be stationed by Jupiter. However, aside from the rumors little else was known about the command ship. Any human who was transported to the command ship never returned. The only ships that the humans had records of was the alien transport vessels. The ships could be confused for a human naval vessel from a distance.
+
+The aliens brought a strange disease with them. This parasite affects both aliens and humans alike. As the parasite grows in the host it slowly destroys the host’s brain. The parasite is extremely weak to changes in the hosts body temperature. Any significant change in host body temperature would kill the parasite. Humanity referred to the parasite as the living zombie. The parasite died if the host died. The only way for the parasite to send its offspring into another host was if its host dealt damage to another potential host. The host released the offspring when it sweat or through the saliva.
+
+Shortly after the military might of Earth was defeated the governments of the world were destroyed. Humanity referred to the alien invasion as the day of reckoning. Humanity was forced to accept the laws of its new overlords. Humanity had to hide its weapons manufacturing in underground factories that were constructed to be undetected from visual inspections. The only weapons factories that were allowed to exist made the weapons that the aliens used for war. The surviving soldiers banded together to form a secret resistance group.
+
+The resistance group took the name Tardigrades. They took the name to represent the name fact that they survived. They wanted to represent the fact that they survived the aliens attempt to wipe them out and would try and gather the strength of humanity. The group was able to recruit new members. However, the aliens outlawed humanity’s ability to buy, sell, and own firearms. The group slowly built an underground network. The resistance’s aim was to train the new recruits to fight or operate in various fields.
+
+Despite the growing strength of the group the aliens were able to continue their work unimpeded. One of the resistances spies confirmed the existence of an alien moon base where they were doing biological experimentation on humans. The council in charge of the organization started recruiting people from various fields to invade the base on the moon and acquire the intel that was stored on the computers there. The plan took advantage of the aliens advanced teleportation systems that were on their ships.
+
+The recruits were hand picked so that they lacked any knowledge of the resistance. The first recruit they deployed was a cadet who was training to be a member of the special forces. They made sure that the recruit was fully trained and then deployed him to various locations. This was done in an attempt to show the aliens that this recruit could be used as a test subject for their super soldier program. The first mission they sent him on was a mission located in the Saharan desert.
+
+The mission was to wipe out a local horde of zombies. While the zombies were restricted to melee combat the recruit could only carry a limited supply of ammo on their person. The hidden objective of the mission was show that their recruit was adaptable and could fight with limited resources. The recruit was deployed with a rifle, a pistol, and combat knife. The resistance operative was wearing regular civilian clothing so that nothing could be tied back to the resistance itself.
+
+The second mission that the new resistance operative was sent to was located in the Amazon Rainforest. The mission was to take out a rogue group of aliens that were controlling the local zombie population to prevent anyone from uncovering what they were doing in their hideout. The operative was deployed to wipe out the aliens and zombies guarding the facility. The hidden goal was that the resistance wanted to show case that they had no issues with the aliens that were respecting human rights. The operative kept the same loadout as the previous mission.
+
+The third mission the operative was given a shield to reflect the alien’s weapon fire. The third mission was located on an island that the aliens frequently used to transport people from earth to unknown locations. The goal was to have the operative get captured by killing as many aliens as they could. This would prove that the human had the fitness required to survive the experimentation process that aliens used. It was also a chance to see what a different species of aliens was capable of doing in combat. Due to the physiology of the alien the operative was informed that the easiest way to kill the new aliens was to use a blade instead of firearms.
+
+The aliens took the operative to the research base on the moon. The human was placed into an augmented reality battlefield. The operative was forced to a laser rifle as one of the weapons. The aliens decided to remove the threat of zombies from the combat simulation. If the human survived the two rounds of combat the aliens would put the human into their super soldier project. If not, the aliens would simply find the next test subject. The operative was forced to watch their three combat missions over again. This way they were fully recovered before they went into the combat simulation.
+
+The second round was against an alien who under went the procedure. The alien was handicapped so that the human had a chance to defeat the alien. The human had to be careful of the alien’s projectiles. The location was designed to give the human plenty of space to take a breather. Due to the location of the combat the laser rifle was constantly recharged. In order to make the combat more difficult the aliens added in a group of weaker aliens to fight alongside the boss. Should the human survive the combat the aliens intended to specialize the human into stealth oriented combat.
+
+With the combat completed the aliens were excited that the human survived. They told their top scientists to prepare a room for the human test subject. With the resistance operative passing the test the aliens marked down in their system that they had another test subject. With the successful completion of getting an operative into the super soldier program. The resistance moved onto the second stage of their plan."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CreditsTitle" type="Label" parent="Control"]
+margin_left = 120.0
+margin_top = 10.0
+margin_right = 1173.23
+margin_bottom = 70.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.756863, 1, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Credits"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Sprite" type="Sprite" parent="Control"]
+show_behind_parent = true
+position = Vector2( 612.631, 365.522 )
+scale = Vector2( 0.811207, 1.12013 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="The Credits" type="Label" parent="."]
+margin_left = 16.03
+margin_top = 180.877
+margin_right = 1799.03
+margin_bottom = 457.877
+rect_scale = Vector2( 0.7, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "David Malevsky - Lead Developer, modeler, programmer, animator
+Gabriel Somek - programmer, modeler, animator
+David Serfaty - Buttons Design, music for level 3 and 4, modeler
+Shai Aronson - Story writer
+Carl-Frederic Theodate - Built a desert temple in level 1"
+align = 1
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_left = 120.0
+margin_top = 84.417
+margin_right = 1173.23
+margin_bottom = 150.417
+custom_fonts/font = ExtResource( 4 )
+text = "BACK"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

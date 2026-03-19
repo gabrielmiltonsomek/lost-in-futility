@@ -1,0 +1,84 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://textures/TitleScreenFontNew.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Models/VersionFont.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Scenes/OptionsMenu.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/TitleScreen.png" type="Texture" id=4]
+[ext_resource path="res://bruhbruh.wav" type="AudioStream" id=5]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.980392, 0.117647, 0.72549, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0, 0, 0, 1 )
+
+[node name="TheMenuOptions" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Volume" type="HScrollBar" parent="."]
+margin_left = 493.0
+margin_top = 100.0
+margin_right = 793.0
+margin_bottom = 158.875
+custom_styles/grabber_highlight = SubResource( 1 )
+custom_styles/scroll = SubResource( 2 )
+min_value = -30.0
+max_value = 30.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VolumeLabel" type="Label" parent="Volume"]
+margin_left = 4.68225
+margin_top = -34.4611
+margin_right = 44.6823
+margin_bottom = -3.46107
+custom_fonts/font = ExtResource( 2 )
+text = "Volume:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OptionsMenuLabel" type="Label" parent="."]
+margin_left = 461.0
+margin_right = 819.0
+margin_bottom = 60.0
+custom_fonts/font = ExtResource( 1 )
+text = "Options Menu"
+
+[node name="BackGround" type="Sprite" parent="."]
+show_behind_parent = true
+position = Vector2( 615.995, 352.526 )
+scale = Vector2( 0.811, 1.12 )
+texture = ExtResource( 4 )
+
+[node name="BackButton" type="Button" parent="."]
+margin_left = 419.0
+margin_top = 200.0
+margin_right = 861.0
+margin_bottom = 266.0
+custom_fonts/font = ExtResource( 1 )
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = 1.0
+autoplay = true
+bus = "Music"
+[connection signal="value_changed" from="Volume" to="." method="_on_Volume_value_changed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]
